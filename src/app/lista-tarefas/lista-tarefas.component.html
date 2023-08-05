@@ -4,7 +4,12 @@
 
     <div class="row">
 
-        <app-card-tarefa *ngFor="let tarefa of tarefas" [tarefa]=" tarefa"></app-card-tarefa>
+        <app-card-tarefa class="col" 
+        *ngFor="let tarefa of tarefas | async" 
+        [tarefa]=" tarefa" 
+        (notificarExclusao)="atualizarLista()">
+        </app-card-tarefa>
+    
     </div>
     <app-rodape></app-rodape>
 </div>
